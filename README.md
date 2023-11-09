@@ -3,7 +3,6 @@
 
 # Login Ekranı
 ![Login](ekran1.png)
-<<<<<<< HEAD
 
 # Otel  Ekranı
 ![Otel Ekranı](ekran2.png)
@@ -21,6 +20,4 @@
 ![Rezervasyon](list.png)
 
 # Rezervasyon Ekleme Ekranı
-![Rezervasyon](rezervasyon.png)
-=======
->>>>>>> 327cf32441c39c77f6e62735846b923443739954
+![Rezervasyon](rezervayon.png)
