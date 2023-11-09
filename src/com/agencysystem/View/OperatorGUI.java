@@ -47,7 +47,10 @@ public class OperatorGUI extends JFrame {
         setTitle(Config.PROJECT_TITLE);
         setVisible(true);
 
-//Kullanıcı sekmesi kodları başlangıcı
+        //Operator(ödevde yazılana göre operator) kullanıcı yönetimi özellikleri atandı.(Değerlendirme Formu 7)
+
+
+        // User List Codes Beginning
         mdl_user_list = new DefaultTableModel(){
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -65,7 +68,7 @@ public class OperatorGUI extends JFrame {
         tbl_user_list.getTableHeader().setReorderingAllowed(false);
         tbl_user_list.getColumnModel().getColumn(0).setMaxWidth(75);
 
-//kullanıcı tablosunda tıklanılan satırın id sini silme formuna aktaran kod
+        //Select ID code for delete user
         tbl_user_list.getSelectionModel().addListSelectionListener(e -> {
             try{
                 String select_user_id = tbl_user_list.getValueAt(tbl_user_list.getSelectedRow(),0).toString();
@@ -79,6 +82,7 @@ public class OperatorGUI extends JFrame {
             dispose();
             LoginGUI login = new LoginGUI();
         });
+
 
         btn_user_add.addActionListener(e -> {
             if(Helper.isFieldEmpty(fld_user_name) || Helper.isFieldEmpty(fld_user_uname) || Helper.isFieldEmpty(fld_user_pass)){

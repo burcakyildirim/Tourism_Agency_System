@@ -114,8 +114,6 @@ public class Hotel {
 
         return hotelList;
     }
-
-//hotel özelliklerini id ye göre yazmak için gerekli metod
     public static Hotel getFetch(int id) {
         Hotel obj = null;
         String query = "SELECT * FROM hotel WHERE id = ?";
@@ -178,8 +176,6 @@ public class Hotel {
         }
         return true;
     }
-
-// girilen anahtar kelimeye göre search metodu
     public static ArrayList<Hotel> searchHotelList(String query){
         ArrayList<Hotel> hotelList = new ArrayList<>();
         Hotel obj;

@@ -61,7 +61,7 @@ public class RoomAddGUI extends JFrame {
             cmb_season.setSelectedIndex(0);
         });
 
-//oda ekle butonu kodları başlangıcı
+//Değerlendirme Formu 11
         btn_room_add.addActionListener(e -> {
             if (Helper.isFieldEmpty(fld_room_stock) || Helper.isFieldEmpty(fld_adult_price) || Helper.isFieldEmpty(fld_child_price) ||
                     Helper.isFieldEmpty(fld_room_bed) || Helper.isFieldEmpty(fld_room_area) ||
@@ -72,6 +72,7 @@ public class RoomAddGUI extends JFrame {
                 Helper.showMsg("fill");
             }
             else {
+                //Değerlendirme Formu 12
                 String room_type = cmb_room_type.getSelectedItem().toString();
                 int stock = Integer.parseInt(fld_room_stock.getText());
                 int season_id=0;

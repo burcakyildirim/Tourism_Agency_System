@@ -62,6 +62,7 @@ public class ReservationGUI extends JFrame {
         Hotel hotel = Hotel.getFetch(room.getHotel_id());
         RoomProperties roomProperty = RoomProperties.getFetch(room.getId());
 
+        //Değerlendirme Formu 14-15 başlangıç
         fld_hotel_name.setText(hotel.getName());
         txtArea_hotel_address.setText(hotel.getAddress());
         fld_hotel_phone.setText(hotel.getPhone());
@@ -94,7 +95,10 @@ public class ReservationGUI extends JFrame {
 
         total_price = (int) (days * (   (room.getAdult_price() * adult_numb) + (room.getChild_price() * child_numb)   ));
         fld_total_price.setText(String.valueOf(total_price) + " TL");
+        //Değerlendirme Formu 14-15 bitiş
 
+
+        //Değerlendirme Formu 16
         btn_add_reservation.addActionListener(e -> {
             if (Helper.isFieldEmpty(fld_client_name) || Helper.isFieldEmpty(fld_client_phone) || Helper.isFieldEmpty(fld_client_mail) || Helper.isAreaEmpty(txtArea_client_note)){
                 Helper.showMsg("Lütfen Rezervasyon bilgilerini doldurunuz.");
@@ -115,6 +119,7 @@ public class ReservationGUI extends JFrame {
         });
     }
 
+    //Değerlendirme Formu 17
     public static boolean updateRoomStock (int stock, int id){
         String query = "UPDATE room SET stock = ? WHERE id = ?";
         try {

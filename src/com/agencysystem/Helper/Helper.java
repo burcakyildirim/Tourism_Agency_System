@@ -33,6 +33,7 @@ public class Helper {
         }
     }
 
+    //Değerlendirme Formu 19-20
     public static void showMsg(String str){
         optionPaneTR();
         String msg;

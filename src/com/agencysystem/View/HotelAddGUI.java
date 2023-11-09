@@ -57,7 +57,7 @@ public class HotelAddGUI extends JFrame {
 
         select_star = cmb_hotel_star.getSelectedItem().toString();
 
-//hotel kaydetme buton kodları
+//Değerlendirme Formu 9
         btn_hotel_add.addActionListener(e -> {
             if (Helper.isFieldEmpty(fld_hotel_name) || Helper.isAreaEmpty(txtarea_hotel_property) ||
                     Helper.isAreaEmpty(txtarea_hotel_address) || Helper.isFieldEmpty(fld_hotel_phone) ||
@@ -75,6 +75,7 @@ public class HotelAddGUI extends JFrame {
                 String address = txtarea_hotel_address.getText();
                 String phone = fld_hotel_phone.getText();
                 String email = fld_hotel_email.getText();
+                //Değerlendirme Formu 10(Otellerin oda fiyatlandırmasını yapmak için sezonlar istendi.)
                 String season_start1 = fld_hotel_season_start1.getText();
                 String season_end1 = fld_hotel_season_end1.getText();
                 String season_start2 = fld_hotel_season_start2.getText();
@@ -84,7 +85,8 @@ public class HotelAddGUI extends JFrame {
                     Hotel addedHotel = Hotel.getFetch(email);
                     added_hotel_id = addedHotel.getId();
 
-                    for (int i = 1; i<=7; i++){  //hotel property ekleme
+                    //Add Hotel Property
+                    for (int i = 1; i<=7; i++){
                         switch (i){
                             case 1:
                                 if (radioButton1.isSelected()){

@@ -184,4 +184,15 @@ public class ReservationInfo {
 
         return reservationInfos;
     }
+    public static boolean delete(int id) {
+        String query = "DELETE FROM reservation_info WHERE id = ?";
+        try {
+            PreparedStatement pr = DBConnector.getInstance().prepareStatement(query);
+            pr.setInt(1,id);
+            return pr.executeUpdate() != -1;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return true;
+    }
 }
