@@ -1,9 +1,6 @@
 [Video Link](https://www.loom.com/share/31ccd8006e6b4ddbbfb2c6fb683d97e0)
 
-#Login Ekranı   
-![Login Ekranı](C:\Users\brcky\IdeaProjects\Patika\Tourism\ekran1.png)
-
-#User Table Creation
+# User Table Creation
 ```
 CREATE TABLE `user` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -15,7 +12,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ```
 
-#Sample Data Insertion for User Table
+# Sample Data Insertion for User Table
 ```
 INSERT INTO `user` (`id`, `name`, `uname`, `pass`, `type`) VALUES 
 ('1', 'Eray Sen', 'esen', '123', 'admin');
@@ -25,7 +22,7 @@ INSERT INTO `user` (`id`, `name`, `uname`, `pass`, `type`) VALUES
 ('5', 'Hasan Yılmaz', 'hyilmaz', '1234', 'admin');
 ```
 
-#Hotel Table Creation
+# Hotel Table Creation
 ```
 CREATE TABLE `hotel` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -38,7 +35,7 @@ CREATE TABLE `hotel` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ```
-#Sample Data Insertion for Hotel Table
+# Sample Data Insertion for Hotel Table
 ```
 INSERT INTO `hotel` (`id`, `name`, `star`, `property`, `address`, `phone`, `email`) VALUES 
 ('1', 'İskelem', '*****', 'Yüzme Havuzu\r\nFitness Center', 'Akyaka Mah. Atatürk Cd. No:68-70 Akyaka-Ula/Muğla', '0212 xxx xxx', 'iskelem@gmail');
@@ -48,13 +45,7 @@ INSERT INTO `hotel` (`id`, `name`, `star`, `property`, `address`, `phone`, `emai
 ('5', 'Doubletree By Hilton Antalya Kemer', '*', 'Hotel Concierge', 'Yeni, Atatürk Blv. No:28/1, 07980 Kemer/Antalya', ' (0242) xxx xx xx', 'doubletree@gmail.com');
 ```
 
-#Otel Ekranı   
-![Otel Ekranı](C:\Users\brcky\IdeaProjects\Patika\Tourism\ekran2.png)
-
-#Otel Kayıt Ekranı   
-![Otel Kayıt Ekranı](C:\Users\brcky\IdeaProjects\Patika\Tourism\otel.png)
-
-#Room Table Creation
+# Room Table Creation
 ```
 CREATE TABLE `room` (
 `id` int NOT NULL AUTO_INCREMENT,
@@ -68,7 +59,7 @@ CREATE TABLE `room` (
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ```
-#Sample Data Insertion for Room Table
+# Sample Data Insertion for Room Table
 ```
 INSERT INTO `room` (`id`, `room_type`, `stock`, `season_id`, `adult_price`, `child_price`, `hotel_type_id`, `hotel_id`) VALUES
 ('1', 'Double', '10', '1', '750', '350', '2', '1');
@@ -78,12 +69,7 @@ INSERT INTO `room` (`id`, `room_type`, `stock`, `season_id`, `adult_price`, `chi
 ('5', 'Single', '11', '11', '600', '300', '5', '5');
 ```
 
-#Oda Ekranı   
-![Oda Ekranı](C:\Users\brcky\IdeaProjects\Patika\Tourism\oda4.png)
-
-#Oda Ekleme Ekranı   
-![Oda Ekleme Ekranı](C:\Users\brcky\IdeaProjects\Patika\Tourism\ekleme.png)
-#Hotel Type Table Creation
+# Hotel Type Table Creation
 ```
 CREATE TABLE `type_hotel` (
 `id` int NOT NULL AUTO_INCREMENT,
@@ -92,7 +78,7 @@ CREATE TABLE `type_hotel` (
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ```
-#Sample Data Insertion for Hotel Type Table
+# Sample Data Insertion for Hotel Type Table
 ```
 INSERT INTO `type_hotel` (`id`, `type`, `hotel_id`) VALUES 
 ('1', 'Oda Kahvaltı', '2');
@@ -102,7 +88,7 @@ INSERT INTO `type_hotel` (`id`, `type`, `hotel_id`) VALUES
 ('5', 'Herşey Dahil', '3');
 ```
 
-#Season Table Creation
+# Season Table Creation
 ```
 CREATE TABLE `season` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -113,7 +99,7 @@ CREATE TABLE `season` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ```
 
-#Sample Data Insertion for Season Table
+# Sample Data Insertion for Season Table
 ```
 INSERT INTO `season` (`id`, `season_start`, `season_end`, `hotel_id`) VALUES 
 ('1', '01/06/2024', '01/08/2024', '1');
@@ -124,7 +110,7 @@ INSERT INTO `season` (`id`, `season_start`, `season_end`, `hotel_id`) VALUES
 ('6', '01/02/2024', '01/04/2024', '3');
 ```
 
-#Room Properties Table Creation
+# Room Properties Table Creation
 ```
 CREATE TABLE `room_properties` (
 `id` int NOT NULL AUTO_INCREMENT,
@@ -135,7 +121,7 @@ CREATE TABLE `room_properties` (
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ```
-#Sample Data Insertion for Room Properties Table
+# Sample Data Insertion for Room Properties Table
 ```
 INSERT INTO `room_properties` (`id`, `property`, `room_id`, `bed`, `area`) VALUES 
 ('1', 'Televizyon \r\nMinibar \r\nKasa', '1', '5', '15');
@@ -145,7 +131,7 @@ INSERT INTO `room_properties` (`id`, `property`, `room_id`, `bed`, `area`) VALUE
 ('5', 'Projeksiyon\ r\n Oyun Konsolu', '5', '2', '20');
 ```
 
-#Reservation Info Table Creation
+# Reservation Info Table Creation
 ```
 CREATE TABLE `reservation_info` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -163,7 +149,7 @@ CREATE TABLE `reservation_info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ```
 
-#Sample Data Insertion for Reservation Info Table
+# Sample Data Insertion for Reservation Info Table
 ```
 INSERT INTO `reservation_info` (`id`, `client_name`, `client_phone`, `client_email`, `client_note`, `room_id`, `check_in`, `check_out`, `adult_numb`, `child_numb`, `total_price`) VALUES
 ('1', 'Burçak Yıldırım', '0531 xxx xx xx', 'brckyldrm@gmail.com', '-', '4', '01/05/2024','05/05/2024', '2','1','5200');
@@ -172,11 +158,6 @@ INSERT INTO `reservation_info` (`id`, `client_name`, `client_phone`, `client_ema
 ('4', 'Berfin Yıldırım', '0534 xxx xx xx', 'brfn@gmail.com', '-', '1', '03/06/2024','10/06/2024', '2','1','5000');
 ('5', 'Selen Özdemir', '0532 xxx xx xx', 'slnozdmr@gmail.com', '-', '5', '01/08/2024','02/08/2024', '1','0','1400');
 ```
-#Rezervasyon Ekranı   
-![Rezervasyon Ekranı](C:\Users\brcky\IdeaProjects\Patika\Tourism\rezervayon.png)
-
-#Rezervasyon Listeme Ekranı   
-![Rezervasyon Listeleme Ekranı](C:\Users\brcky\IdeaProjects\Patika\Tourism\list.png)
 
 
 
