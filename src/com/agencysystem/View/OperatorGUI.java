@@ -47,7 +47,7 @@ public class OperatorGUI extends JFrame {
         setTitle(Config.PROJECT_TITLE);
         setVisible(true);
 
-        //Operator(ödevde yazılana göre operator) kullanıcı yönetimi özellikleri atandı.(Değerlendirme Formu 7)
+        //Operator(ödevde yazılana göre admin) kullanıcı yönetimi özellikleri atandı.(Değerlendirme Formu 7)
 
 
         // User List Codes Beginning
@@ -77,13 +77,14 @@ public class OperatorGUI extends JFrame {
             catch (Exception exception){
             }
         });
-
+        //Button for logout
         btn_logout.addActionListener(e -> {
             dispose();
             LoginGUI login = new LoginGUI();
         });
 
 
+        //button for user add
         btn_user_add.addActionListener(e -> {
             if(Helper.isFieldEmpty(fld_user_name) || Helper.isFieldEmpty(fld_user_uname) || Helper.isFieldEmpty(fld_user_pass)){
                 Helper.showMsg("fill");
@@ -104,29 +105,27 @@ public class OperatorGUI extends JFrame {
             }
         });
 
-        btn_user_delete.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (Helper.isFieldEmpty(fld_user_id)){
-                    Helper.showMsg("fill");
-                }
-                else{
-                    if (Helper.confirm("sure")){
-                        int user_id = Integer.parseInt(fld_user_id.getText());
-                        if (User.delete(user_id)){
-                            Helper.showMsg("done");
-                            loadUserModel();
-                            fld_user_id.setText(null);
-                            cmb_sh_user_type.setSelectedIndex(0);
-                        }
-                        else{
-                            Helper.showMsg("error");
-                        }
+        //button for delete user
+        btn_user_delete.addActionListener(e -> {
+            if (Helper.isFieldEmpty(fld_user_id)){
+                Helper.showMsg("fill");
+            }
+            else{
+                if (Helper.confirm("sure")){
+                    int user_id = Integer.parseInt(fld_user_id.getText());
+                    if (User.delete(user_id)){
+                        Helper.showMsg("done");
+                        loadUserModel();
+                        fld_user_id.setText(null);
+                        cmb_sh_user_type.setSelectedIndex(0);
+                    }
+                    else{
+                        Helper.showMsg("error");
                     }
                 }
             }
         });
-
+        //button for user search
         btn_user_sh.addActionListener(e -> {
             String name = fld_sh_user_name.getText();
             String uname = fld_sh_user_uname.getText();
@@ -136,8 +135,8 @@ public class OperatorGUI extends JFrame {
             ArrayList<User> searchingUser = User.searchUserList(query);
             loadUserModel(searchingUser);
         });
-//Kullanıcı sekmesi kodları bitişi
     }
+    //User Codes Finish
 
     private void loadUserModel() {
         DefaultTableModel clearModel = (DefaultTableModel) tbl_user_list.getModel();
@@ -153,8 +152,6 @@ public class OperatorGUI extends JFrame {
             mdl_user_list.addRow(row_user_list);
         }
     }
-
-//filtrelenen kullanıcıları listelemek için yazıldı
     public void loadUserModel(ArrayList<User> list){
         DefaultTableModel clearModel = (DefaultTableModel) tbl_user_list.getModel();
         clearModel.setRowCount(0);

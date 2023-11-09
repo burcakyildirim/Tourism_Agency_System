@@ -78,7 +78,7 @@ public class RoomProperties {
         this.area = area;
     }
 
-    //oda özellilerini oda id sine db den alan metod
+    //Getting room properties by Room Id
     public static ArrayList<RoomProperties> getListByRoomID( int id){
         ArrayList<RoomProperties> roomPropertiesList = new ArrayList<>();
         RoomProperties obj;

@@ -157,7 +157,7 @@ public class Room {
         return roomList;
     }
 
-//oda özelliklerini oda id ye göre yazmak için gerekli metod
+    //Method to write room properties by room
     public static Room getFetch(int id) {
         Room obj = null;
         String query = "SELECT * FROM room WHERE id = ?";

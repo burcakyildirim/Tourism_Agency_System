@@ -91,7 +91,6 @@ public class User {
         return userList;
     }
 
-//login ekranında uname ve pass i db de sorgular
     public static User getFetch(String uname, String pass){
         User obj = null;
         String query = "SELECT * FROM user WHERE uname = ? AND pass = ?";
@@ -123,7 +122,6 @@ public class User {
         return obj;
     }
 
-//operator kullanıcı eklerken db de aynı uname var mı sorgusunu yapmak için yazıldı
     public static User getFetch(String uname){
         User obj = null;
         String query = "SELECT * FROM user WHERE uname = ?";
@@ -145,7 +143,6 @@ public class User {
         return obj;
     }
 
-//operator ekranında kullanıcı ekleme butonu için yazıldı. db ye kullanıcı ekler
     public static boolean add(String name, String uname, String pass, String type){
         String query = "INSERT INTO user (name, uname, pass, type) VALUES (?,?,?,?)";
         User findUser = getFetch(uname);
@@ -184,7 +181,7 @@ public class User {
         return true;
     }
 
-// girilen anahtar kelimeye göre search metodu. Kullanıcı filtreleme metodu için yazıldı
+    //Search by entered word to filter user
     public static ArrayList<User> searchUserList(String query){
         ArrayList<User> userList = new ArrayList<>();
         User obj;

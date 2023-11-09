@@ -99,7 +99,7 @@ public class HotelType {
         return hotelTypeList;
     }
 
-//konaklama tiplerinin hotel id sine db den alan metod
+//Getting hotel type by Hotel ID
     public static ArrayList<HotelType> getListByHotelID( int id){
         ArrayList<HotelType> hotelTypeList = new ArrayList<>();
         HotelType obj;

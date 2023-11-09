@@ -131,7 +131,8 @@ public class Hotel {
         return obj;
     }
 
-//yeni Otel eklerken 2. defa ekleme olmaması için email e göre kontrol
+    //Checking by email when adding a new hotel
+
     public static Hotel getFetch(String email) {
         Hotel obj = null;
         String query = "SELECT * FROM hotel WHERE email = ?";

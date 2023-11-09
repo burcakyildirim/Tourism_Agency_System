@@ -89,7 +89,7 @@ public class AdminGUI extends JFrame {
         setTitle(Config.PROJECT_TITLE);
         setVisible(true);
 
-//hotel tablosu kodları başlangıcı
+        //Hotel Table Codes Header
         mdl_hotel_list = new DefaultTableModel(){
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -107,7 +107,7 @@ public class AdminGUI extends JFrame {
         tbl_hotel_list.getTableHeader().setReorderingAllowed(false);
         tbl_hotel_list.getColumnModel().getColumn(0).setMaxWidth(75);
 
-//pansiyon tiplerini ve sezonları listelemek için hotel id sini alma.
+        //For hotel type and seasons list the hotels
         tbl_hotel_list.getSelectionModel().addListSelectionListener(e -> {
             try{
                 select_hotel_id = Integer.parseInt(tbl_hotel_list.getValueAt(tbl_hotel_list.getSelectedRow(),0).toString());
@@ -120,9 +120,10 @@ public class AdminGUI extends JFrame {
             select_hotel_id = 0;
         });
 
-//hotel tablosu kodları bitişi
+        //Hotel Table Codes Finish
 
-//hotel konaklama tablosu(yarım pansiyon, tam pansiyon, herşey dahil vs) kodları başlangıcı
+
+        //Hotel Type Codes Header
         mdl_hotel_type = new DefaultTableModel(){
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -138,10 +139,10 @@ public class AdminGUI extends JFrame {
         //loadHotelTypeModel();
         tbl_hotel_type.setModel(mdl_hotel_type);
         tbl_hotel_type.getTableHeader().setReorderingAllowed(false);
+        //Hotel Type Codes Finish
 
-//hotel konaklama tablosu(yarım pansiyon, tam pansiyon, herşey dahil vs) kodları bitişi
 
-//hotel sezon tablosu kodları başlangıcı
+        //Hotel Season Codes Header
         mdl_hotel_season = new DefaultTableModel(){
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -154,13 +155,14 @@ public class AdminGUI extends JFrame {
         Object[] col_hotel_season = {"Dönem Başlangıcı", "Dönem Bitişi"};
         mdl_hotel_season.setColumnIdentifiers(col_hotel_season);
         row_hotel_season = new Object[col_hotel_season.length];
-        //loadHotelSeasonModel();
         tbl_hotel_season.setModel(mdl_hotel_season);
         tbl_hotel_season.getTableHeader().setReorderingAllowed(false);
 
-//hotel sezon tablosu kodları başlangıcı
 
-//oda tablosu kodları başlangıcı
+        //Hotel Season Codes Finish
+
+
+        //Room Codes Header
         mdl_room_list = new DefaultTableModel(){
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -177,9 +179,11 @@ public class AdminGUI extends JFrame {
         tbl_room_list.setModel(mdl_room_list);
         tbl_room_list.getTableHeader().setReorderingAllowed(false);
         tbl_room_list.getColumnModel().getColumn(0).setMaxWidth(75);
-//oda tablosu kodları bitişi
 
-//oda özellikleri tablosu kodları başlangıcı
+        //Room Codes Finish
+
+
+        //Room Properties Codes Header
         mdl_room_properties = new DefaultTableModel(){
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -192,11 +196,11 @@ public class AdminGUI extends JFrame {
         Object[] col_room_properties = {"Oda Özellikleri", "Yatak Bilgisi", "Alan(m2)" };
         mdl_room_properties.setColumnIdentifiers(col_room_properties);
         row_room_properties = new Object[col_room_properties.length];
-        //loadRoomPropertiesModel();
         tbl_room_property.setModel(mdl_room_properties);
         tbl_room_property.getTableHeader().setReorderingAllowed(false);
 
-//oda özelliklerini listelemek için tıklanınca oda id sini alma.
+
+        //Getting room properties by Room ID
         tbl_room_list.getSelectionModel().addListSelectionListener(e -> {
             try{
                 select_room_id = Integer.parseInt(tbl_room_list.getValueAt(tbl_room_list.getSelectedRow(),0).toString());
@@ -210,16 +214,16 @@ public class AdminGUI extends JFrame {
             select_room_id = 0;
         });
 
-//oda özellikleri tablosu kodları bitişi
+        //Room Properties Codes Finish
 
-//admin panel çıkış butonu
+        //Button Log Out
         btn_logout.addActionListener(e -> {
             dispose();
             LoginGUI logGUI = new LoginGUI();
 
         });
 
-//otel yönetim sayfası otel ekle butonu
+        //Hotel add button
         btn_hotel_add.addActionListener(e -> {
             HotelAddGUI hotelAdd = new HotelAddGUI(admin);
             hotelAdd.addWindowListener(new WindowAdapter() {
@@ -231,7 +235,7 @@ public class AdminGUI extends JFrame {
             });
         });
 
-//oda yönetim sayfası oda ekle butonu
+        //Room add for room management
         btn_room_add.addActionListener(e -> {
             RoomAddGUI roomAddGUI = new RoomAddGUI(admin);
             roomAddGUI.addWindowListener(new WindowAdapter() {
@@ -244,7 +248,8 @@ public class AdminGUI extends JFrame {
             });
         });
 
-//Değerlendirme Formu 13
+        //Değerlendirme Formu 13
+        //Room Search Button
         btn_room_sh.addActionListener(e -> {
             String regionHotelName = fld_region_hotelName.getText();
             check_in = fld_check_in.getText().trim();
@@ -315,6 +320,7 @@ public class AdminGUI extends JFrame {
            fld_region_hotelName.setText(null);
         });
 
+        //Button for reservation
         btn_room_reservation.addActionListener(e -> {
             if (Helper.isFieldEmpty(fld_room_id) || Helper.isFieldEmpty(fld_check_in) || Helper.isFieldEmpty(fld_check_out) || Helper.isFieldEmpty(fld_adult_numb) || Helper.isFieldEmpty(fld_child_numb)){
                 Helper.showMsg("Rezervasyon yapılacak oda seçiniz. Giriş - Çıkış tarihlerini ve misafir sayılarını doldurunuz.");
@@ -343,7 +349,8 @@ public class AdminGUI extends JFrame {
             }
         });
 
-//Değerlendirme formu 18
+        //Değerlendirme formu 18
+        //Reservation List Codes Header
         mdl_reservation_list = new DefaultTableModel(){
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -360,8 +367,8 @@ public class AdminGUI extends JFrame {
         tbl_reservation_list.setModel(mdl_reservation_list);
         tbl_reservation_list.getTableHeader().setReorderingAllowed(false);
         tbl_reservation_list.getColumnModel().getColumn(0).setMaxWidth(75);
-//rezervasyon bilgileri tablosu kodları bitişi
 
+        //Getting reservation ID for delete reservation
         tbl_reservation_list.getSelectionModel().addListSelectionListener(e -> {
             try {
                 String select_user_id = tbl_reservation_list.getValueAt(tbl_reservation_list.getSelectedRow(), 0).toString();
@@ -370,6 +377,7 @@ public class AdminGUI extends JFrame {
 
             }
         });
+        //Delete button for reservation
         btn_dlt_reservation.addActionListener(e -> {
             if(Helper.isFieldEmpty(fld_reservation_id)) {
                 Helper.showMsg("fill");
@@ -387,6 +395,7 @@ public class AdminGUI extends JFrame {
             }
         });
     }
+    //Reservation Codes Finish
 
     private void loadReservationModel() {
         DefaultTableModel clearModel = (DefaultTableModel) tbl_reservation_list.getModel();

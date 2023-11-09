@@ -25,7 +25,7 @@ public class LoginGUI extends JFrame {
         setResizable(false);
         setVisible(true);
 
-//Değerlendirme Formu 8
+        //Değerlendirme Formu 8
         btn_login.addActionListener(e -> {
             if (Helper.isFieldEmpty(fld_user_uname) || Helper.isFieldEmpty(fld_user_pass)){
                 Helper.showMsg("fill");

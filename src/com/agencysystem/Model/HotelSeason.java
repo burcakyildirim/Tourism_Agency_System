@@ -97,7 +97,7 @@ public class HotelSeason {
         return hotelSeasonList;
     }
 
-//konaklama sezonlarının hotel id sine db den alan metod
+    //Getting seasons by Hotel Id
     public static ArrayList<HotelSeason> getListByHotelID( int id){
         ArrayList<HotelSeason> hotelSeasonList = new ArrayList<>();
         HotelSeason obj;
@@ -121,6 +121,7 @@ public class HotelSeason {
         return hotelSeasonList;
     }
 
+    //Add new hotel season
     public static boolean add(String season_start, String season_end, int hotel_id){
         String query = "INSERT INTO season (season_start, season_end, hotel_id) VALUES (?,?,?)";
         try {

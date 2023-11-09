@@ -53,7 +53,7 @@ public class RoomAddGUI extends JFrame {
         loadHotelTypeCombo();
         loadSeasonCombo();
 
-//oda ekleme sayfasında seçilen odaya göre dinamik olarak pansiyon tipini getiren metod
+        //Getting hotel type when room selected
         cmb_room_hotelname.addActionListener(event -> {
             loadHotelTypeCombo();
             loadSeasonCombo();
@@ -61,7 +61,8 @@ public class RoomAddGUI extends JFrame {
             cmb_season.setSelectedIndex(0);
         });
 
-//Değerlendirme Formu 11
+        //Değerlendirme Formu 11
+        //Room add Codes Header
         btn_room_add.addActionListener(e -> {
             if (Helper.isFieldEmpty(fld_room_stock) || Helper.isFieldEmpty(fld_adult_price) || Helper.isFieldEmpty(fld_child_price) ||
                     Helper.isFieldEmpty(fld_room_bed) || Helper.isFieldEmpty(fld_room_area) ||
@@ -144,11 +145,11 @@ public class RoomAddGUI extends JFrame {
                 }
             }
         });
-//oda ekle butonu kodları bitişi
-
     }
+    //Room add Codes Finish
 
-//Hotel isimlerini combo box a aktaran metod
+
+    //Transfer hotel names to combo box
     public void loadHotelNameCombo(){
         cmb_room_hotelname.removeAllItems();
         cmb_room_hotelname.addItem(new Item(0,null));
@@ -157,7 +158,8 @@ public class RoomAddGUI extends JFrame {
         }
     }
 
-//oda ekleme sayfasında seçilen otele göre pansiyon türlerini combo box a aktaran metod
+
+    //Transfer hotel types for hotels to combo box
     private void loadHotelTypeCombo() {
         Item hotelItem = (Item) cmb_room_hotelname.getSelectedItem();
         cmb_room_hotel_type.removeAllItems();
@@ -168,7 +170,7 @@ public class RoomAddGUI extends JFrame {
         }
     }
 
-//oda ekleme sayfasında seçilen otele göre sezon türlerini combo box a aktaran metod
+    //Transfer seasons for hotels to combo box
     private void loadSeasonCombo() {
         Item hotelItem = (Item) cmb_room_hotelname.getSelectedItem();
         cmb_season.removeAllItems();

@@ -57,7 +57,8 @@ public class HotelAddGUI extends JFrame {
 
         select_star = cmb_hotel_star.getSelectedItem().toString();
 
-//Değerlendirme Formu 9
+        //Değerlendirme Formu 9
+        //Hotel add button Codes Header
         btn_hotel_add.addActionListener(e -> {
             if (Helper.isFieldEmpty(fld_hotel_name) || Helper.isAreaEmpty(txtarea_hotel_property) ||
                     Helper.isAreaEmpty(txtarea_hotel_address) || Helper.isFieldEmpty(fld_hotel_phone) ||
