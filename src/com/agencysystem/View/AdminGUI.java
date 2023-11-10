@@ -15,7 +15,6 @@ public class AdminGUI extends JFrame {
     private JPanel wrapper;
     private JPanel pnl_top;
     private JButton btn_logout;
-    private JTabbedPane tab_admin;
     private JPanel pnl_hotel_list;
     private JScrollPane scrl_hotel_list;
     private JTable tbl_hotel_list;
